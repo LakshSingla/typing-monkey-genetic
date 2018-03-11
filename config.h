@@ -4,9 +4,11 @@
 #include <string>
 
 namespace CONFIG {
-    float mutationProbablity;
-    std::string testPhrase = "THIS IS A RANDOM PHRASE TO TEST";
-    int testPhraseLength = testPhrase.length();
+    const int populationSize = 2000;
+    const int generations = 1000;
+    const float mutationProbablity = 0.02;
+    const std::string testPhrase = "THIS IS A RANDOM PHRASE TO TEST";
+    const int testPhraseLength = testPhrase.length();
 }
 
 #endif
