@@ -11,6 +11,8 @@ Species population[CONFIG::populationSize];
 Species offspring[CONFIG::populationSize];
 float matingPool[CONFIG::populationSize];
 
+//Extern Variables
+
 //Function Declarations
 void initPopulation();
 void setPopulationFitness();
