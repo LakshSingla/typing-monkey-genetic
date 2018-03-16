@@ -19,7 +19,15 @@ int returnFitSpecies();
 
 //int main() function
 int main() {
-
+    initPopulation();
+    setPopulationFitness();
+    for(int i = 0 ; i < CONFIG::generations; i++) {
+        matePopulation();
+        setPopulationFitness();
+    }
+    for(int i = 0; i < CONFIG::populationSize; i++) {
+        cout<<population[i].getDNA();
+    }
     return 0;
 }
 
@@ -71,5 +79,5 @@ void matePopulation() {
         }
         offspring[i] = child;
     }
+    for(int i = 0; i < CONFIG::populationSize; i++) population[i] = offspring[i];
 }
-
