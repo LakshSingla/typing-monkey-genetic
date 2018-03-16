@@ -8,10 +8,13 @@
 
 //Global Variables
 Species population[CONFIG::populationSize];
+Species offspring[CONFIG::populationSize];
+float matingPool[CONFIG::populationSize];
 
 //Function Declarations
 void initPopulation();
 void setPopulationFitness();
+void matePopulation();
 
 //int main() function
 int main() {
@@ -31,11 +34,21 @@ void initPopulation() {
 }
 
 void setPopulationFitness() {
-    float maxFitness;
-    maxFitness = population[0].setRawFitness;
+    float totalFitness = 0;
     for(int i = 0; i < CONFIG::populationSize; i++) {
-        float currentFitness = population[i].setRawFitness();
-        if(currentFitness > maxFitness) maxFitness = currentFitness;
+        totalFitness += population[i].setRawFitness();
     }
-    for(int i = 0; i < CONFIG::populationSize; i++) population[i].normalizeFitness(maxFitness);
+    for(int i = 0; i < CONFIG::populationSize; i++) population[i].normalizeFitness(totalFitness);
+}
+
+void setMatingPool() {
+    float cumulativeProb = 0;
+    for(int i = 0; i < CONFIG::populationSize; i++) {
+        cumulativeProb += population[i].getFitness();
+        matingPool[i] = cumulativeProb;
+    }
+}
+
+void matePopulation() {
+
 }

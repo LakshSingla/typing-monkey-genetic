@@ -15,7 +15,7 @@ class Species {
     string getDNA() const {return DNA;}
     float setRawFitness();
     void normalizeFitness(int max){ fitness /= max;}
-    int getFitness() const {return fitness;}
+    float getFitness() const {return fitness;}
     void mutation();
     Species operator +  (Species);
     char& operator [] (int);
