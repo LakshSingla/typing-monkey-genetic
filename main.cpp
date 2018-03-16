@@ -15,6 +15,7 @@ float matingPool[CONFIG::populationSize];
 void initPopulation();
 void setPopulationFitness();
 void matePopulation();
+int returnFitSpecies();
 
 //int main() function
 int main() {
@@ -49,6 +50,26 @@ void setMatingPool() {
     }
 }
 
-void matePopulation() {
-
+int returnFitSpecies() {
+    float random = UTILS::randomize0to1();
+    int retVar;
+    for(retVar = 0; retVar < CONFIG::populationSize; retVar++) {
+        if(random > matingPool[retVar]) continue;
+        else return retVar;
+    }
+    return 0;
 }
+
+void matePopulation() {
+    Species parentA, parentB;
+    Species child;
+    for(int i = 0 ; i < CONFIG::populationSize; i++){
+        parentA = population[returnFitSpecies()];
+        parentB = population[returnFitSpecies()];
+        for(int j = 0 ; j < CONFIG::testPhraseLength; j++) {
+           child[j] = (UTILS::randomize0to1() < 0.5 ? parentA[j] : parentB[j]); 
+        }
+        offspring[i] = child;
+    }
+}
+
