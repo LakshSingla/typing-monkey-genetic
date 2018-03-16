@@ -6,14 +6,15 @@ using namespace std;
 
 class Species {
     private:
-    int fitness; 
-    public:
+    float fitness; 
     string DNA;
+    public:
     Species() {}
     Species(string d, int f)  {setDNA(d);}
     void setDNA(string d) {DNA = d;}
     string getDNA() const {return DNA;}
-    void setFitness();
+    float setRawFitness();
+    void normalizeFitness(int max){ fitness /= max;}
     int getFitness() const {return fitness;}
     void mutation();
     Species operator +  (Species);
