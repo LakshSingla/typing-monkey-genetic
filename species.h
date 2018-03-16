@@ -6,14 +6,14 @@ using namespace std;
 
 class Species {
     private:
-    string DNA;
     int fitness; 
     public:
+    string DNA;
     Species() {}
-    Species(string d, int f)  {setDNA(d), setFitness(f);}
+    Species(string d, int f)  {setDNA(d);}
     void setDNA(string d) {DNA = d;}
     string getDNA() const {return DNA;}
-    void setFitness(int f) {fitness = f;}
+    void setFitness();
     int getFitness() const {return fitness;}
     void mutation();
     Species operator +  (Species);

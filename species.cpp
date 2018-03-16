@@ -23,3 +23,10 @@ Species Species:: operator + (Species spe) {
     }
     return child;
 }
+
+void Species::setFitness() {
+    fitness = 0;
+    for(int i = 0; i < CONFIG::testPhraseLength; i++) {
+        if(DNA[i] == CONFIG::testPhrase[i]) fitness++;
+    }
+}

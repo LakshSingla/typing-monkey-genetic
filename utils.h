@@ -15,12 +15,11 @@ namespace UTILS {
         return random;
     }
     //Includes a-z and <space>
-    char randomCharacter() {
-        int random = randomize0to1() * (26 + 1); // 27 options + 1
-        if(random > 0 && random < 26) return 'A' + random ;
+    char randomCharacter(){
+        int random = (int)(floor(randomize0to1() * (26 + 1))); // 27 options + 1
+        if(random >= 0 && random <= 25) return 'A' + random ;
         else return ' ';
     }
-
 
 }
 
