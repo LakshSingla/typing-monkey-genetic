@@ -4,11 +4,11 @@
 #include <string>
 
 namespace CONFIG {
-    extern const int populationSize ;
-    extern const int generations ;
-    extern const float mutationProbablity ;
-    extern const std::string testPhrase;
-    extern const int testPhraseLength;
+    extern const int populationSize = 2000 ;
+    extern const int generations = 1000 ;
+    extern const float mutationProbablity = 0.02 ;
+    extern const std::string testPhrase = "THIS IS A RANDOM TEST PHRASE";
+    extern const int testPhraseLength = testPhrase.length();
 }
 
 #endif

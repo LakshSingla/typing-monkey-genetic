@@ -1,0 +1,1 @@
+g++ main.cpp species.cpp utils.cpp config.cpp -o genetic

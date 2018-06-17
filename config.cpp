@@ -1,10 +1,10 @@
-#include "config.h"
+// #include "config.h"
 #include <string>
 
-using namespace CONFIG;
+// using namespace CONFIG;
 using namespace std;
-    const int populationSize = 2000;
-    const int generations = 1000;
-    const float mutationProbablity = 0.02;
-    const std::string testPhrase = "THIS IS A RANDOM PHRASE TO TEST";
-    const int testPhraseLength = CONFIG::testPhrase.length();
+    extern const int populationSize = 2000;
+    extern const int generations = 1000;
+    extern const float mutationProbablity = 0.02;
+    extern const std::string testPhrase = "THIS IS A RANDOM PHRASE TO TEST";
+    extern const int testPhraseLength = testPhrase.length();

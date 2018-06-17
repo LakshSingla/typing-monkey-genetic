@@ -6,6 +6,7 @@
 #include "config.h"
 #include "utils.h"
 
+
 //Global Variables
 Species population[CONFIG::populationSize];
 Species offspring[CONFIG::populationSize];
