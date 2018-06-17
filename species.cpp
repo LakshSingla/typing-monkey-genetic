@@ -5,7 +5,7 @@
 void Species :: mutation() {
     for(int i = 0; i < DNA.length(); i++) { 
         float currentProbability = UTILS::randomize0to1() ;
-        if(currentProbability < CONFIG::mutationProbablity) {
+        if(currentProbability < mutationProbablity) {
             DNA[i] = UTILS::randomCharacter();
         }
     }
@@ -26,8 +26,8 @@ Species Species:: operator + (Species spe) {
 
 float Species::setRawFitness() {
     fitness = 0;
-    for(int i = 0; i < CONFIG::testPhraseLength; i++) {
-        if(DNA[i] == CONFIG::testPhrase[i]) fitness++;
+    for(int i = 0; i < testPhraseLength; i++) {
+        if(DNA[i] == testPhrase[i]) fitness++;
     }
     return fitness;
 }
